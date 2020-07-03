@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Tung Mg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2 style="text-align: center">Account Information</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="account: ${accounts}">
+            <td th:text="${account.username}"></td>
+            <td th:text="${account.password}"></td>
+            <td th:text="${account.age}"></td>
+            <td>
+                <a th:href="@{'/account/edit/' + ${account.id}}"
+                   class="btn btn-success glyphicon glyphicon-wrench"></a>
+            </td>
+            <td>
+                <a th:href="@{'/account/delete/' + ${account.id}}"
+                   class="btn btn-danger glyphicon glyphicon-remove"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!--    <a th:href="@{/accounts/add-account}" class="btn btn-info glyphicon glyphicon">Add employee</a>-->
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2 style="text-align: center">Add Account</h2>
+    <form action="#" th:action="@{/account/add}" th:object="${account}" method="post">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="username" type="text" th:value="${username}" class="form-control" name="username"
+                   placeholder="Username">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input id="password" type="text" th:value="${password}" class="form-control" name="password"
+                   placeholder="Password">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="age" type="text" th:value="${age}" class="form-control" name="age"
+                   placeholder="Age">
+        </div>
+
+        <input type="submit" class="btn btn-info glyphicon glyphicon">
+    </form>
+</div>
+</body>
+</html>
